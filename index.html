@@ -1081,6 +1081,27 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 </a>
 
 <style>
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+</style>
 <section style="padding:50px;background:#0f172a;color:white;text-align:center;">
 
 <h2 style="font-size:35px;">Recent Projects</h2>
@@ -1088,71 +1109,64 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:30px;">
 
-<!-- PROJECT 1 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project1.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project1.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Computer Lab Setup</h3>
 </div>
 
-<!-- PROJECT 2 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project2.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project2.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Desktop Support</h3>
 </div>
 
-<!-- PROJECT 3 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project3.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project3.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Windows Installation</h3>
 </div>
 
-<!-- PROJECT 4 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project4.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project4.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Software Deployment</h3>
 </div>
 
-<!-- PROJECT 5 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project5.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project5.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Hardware Upgrade</h3>
 </div>
 
-<!-- PROJECT 6 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project6.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project6.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Networking Setup</h3>
 </div>
 
-<!-- PROJECT 7 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project7.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project7.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">PC Maintenance</h3>
 </div>
 
-<!-- PROJECT 8 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project8.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project8.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">Technical Support</h3>
 </div>
 
-<!-- PROJECT 10 -->
 <div style="background:#1e293b;border-radius:15px;width:300px;overflow:hidden;">
-<img src="project10.jpg" loading="lazy"
-style="width:100%;height:200px;object-fit:cover;image-rendering:auto;display:block;">
+<img src="project10.jpg" loading="lazy" width="300" height="220"
+style="width:100%;height:220px;object-fit:cover;display:block;">
 <h3 style="padding:15px;">IT Infrastructure</h3>
 </div>
 
 </div>
 </section>
-   
+
+</div>
+</section>
 </body>
 </html>
