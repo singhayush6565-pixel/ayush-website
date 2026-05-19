@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush Umesh Singh | IT Lab Setup & Support Expert</title>
+<meta name="description" content="Professional PC Lab Setup, Hardware Assembly, OS Installation & IT Support for Engineering Colleges and Offices. Contract-based services in Maharashtra.">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AYUSH IT SERVICES — WEBSITE CSS
+   HOW TO CHANGE COLORS:
+   Sabse upar :root mein variables hain — sirf yahan change karo
+   --navy       = dark background color
+   --blue       = main button/accent color  
+   --accent     = golden/orange highlight color
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* === MAIN COLORS — YAHAN CHANGE KARO === */
+  --navy:    #0B1D3A;      /* dark navy background */
+  --blue:    #1560BD;      /* main blue */
+  --accent:  #F4A226;      /* golden orange */
+  --light:   #F0F4FA;      /* light page bg */
+  --white:   #ffffff;
+  --text:    #1a2540;      /* body text */
+  --muted:   #5A6580;      /* gray text */
+  --border:  #dde3f0;
+
+  /* === FONTS — YAHAN CHANGE KARO === */
+  --font-heading: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text); background: var(--white); line-height: 1.6; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position: sticky; top: 0; z-index: 999;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; height: 60px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.nav-logo {
+  font-family: var(--font-heading); font-weight: 800; font-size: 1.15rem;
+  color: var(--white); text-decoration: none; letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.7); text-decoration: none;
+  font-size: 0.88rem; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--accent); color: var(--navy); border: none; border-radius: 7px;
+  padding: 8px 20px; font-family: var(--font-body); font-weight: 700;
+  font-size: 0.85rem; cursor: pointer; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.88; }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 55%, #0d2a5e 100%);
+  padding: 5rem 2rem 4rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -80px; right: -100px;
+  width: 450px; height: 450px; border-radius: 50%;
+  border: 60px solid rgba(244,162,38,0.06); pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  border: 40px solid rgba(21,96,189,0.08); pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(244,162,38,0.12); color: var(--accent);
+  border: 1px solid rgba(244,162,38,0.3); border-radius: 99px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em;
+  padding: 6px 18px; text-transform: uppercase; margin-bottom: 1.4rem;
+}
+.badge-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.hero h1 {
+  font-family: var(--font-heading); font-size: 3rem; font-weight: 800;
+  color: var(--white); line-height: 1.08; margin-bottom: 0.5rem;
+}
+.hero h1 .highlight { color: var(--accent); }
+
+.hero-role {
+  font-size: 1rem; color: rgba(255,255,255,0.6); font-weight: 400;
+  letter-spacing: 0.04em; margin-bottom: 1.2rem;
+}
+
+.hero-tagline {
+  font-size: 1.1rem; color: rgba(255,255,255,0.85); font-weight: 400;
+  max-width: 520px; line-height: 1.6; margin-bottom: 2.5rem;
+}
+
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem; }
+
+.btn-primary {
+  background: var(--accent); color: var(--navy);
+  border: none; border-radius: 9px; padding: 13px 30px;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(244,162,38,0.4); }
+
+.btn-outline {
+  background: transparent; color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.3); border-radius: 9px; padding: 13px 30px;
+  font-family: var(--font-body); font-weight: 500; font-size: 0.95rem;
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Trust Badges */
+.trust-row {
+  display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+  border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; color: rgba(255,255,255,0.6);
+}
+.trust-item strong { color: rgba(255,255,255,0.9); }
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; justify-content: center; flex-wrap: wrap;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.stat {
+  padding: 1.4rem 3rem; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-heading); font-size: 2rem; font-weight: 800;
+  color: var(--blue); display: block;
+}
+.stat-label { font-size: 0.77rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; }
+
+/* ============================================================
+   SECTIONS — GENERAL
+   ============================================================ */
+.section { padding: 4.5rem 2rem; }
+.section-inner { max-width: 920px; margin: 0 auto; }
+.section-label {
+  font-size: 0.73rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--blue); margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: var(--font-heading); font-size: 2rem; font-weight: 800;
+  color: var(--navy); margin-bottom: 0.6rem; line-height: 1.15;
+}
+.section-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem; max-width: 580px; }
+
+/* ============================================================
+   SERVICES GRID
+   ============================================================ */
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.service-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.5rem 1.3rem;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  cursor: default; position: relative;
+}
+.service-card:hover {
+  box-shadow: 0 10px 36px rgba(21,96,189,0.12);
+  transform: translateY(-3px); border-color: rgba(21,96,189,0.2);
+}
+.svc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+.svc-icon {
+  width: 48px; height: 48px; background: #EEF4FF; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+}
+.svc-enquire {
+  background: transparent; border: 1px solid var(--border); border-radius: 7px;
+  padding: 5px 12px; font-size: 0.74rem; font-weight: 600; color: var(--blue);
+  cursor: pointer; transition: all 0.2s; font-family: var(--font-body);
+}
+.svc-enquire:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.svc-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+.svc-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+
+/* ============================================================
+   COLLEGE LAB HIGHLIGHT
+   ============================================================ */
+.college-section { background: var(--navy); }
+.college-inner {
+  max-width: 920px; margin: 0 auto; padding: 4rem 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+.college-inner h2 {
+  font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800;
+  color: var(--white); margin-bottom: 1rem; line-height: 1.2;
+}
+.college-inner p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 0.88rem; color: rgba(255,255,255,0.85);
+}
+.check-icon {
+  width: 20px; height: 20px; background: rgba(244,162,38,0.2); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 0.7rem; flex-shrink: 0; margin-top: 1px;
+}
+
+/* ============================================================
+   PROCESS STEPS
+   ============================================================ */
+.process-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0; position: relative;
+}
+.process-grid::before {
+  content: '';
+  position: absolute; top: 28px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(to right, var(--blue), var(--accent));
+  z-index: 0;
+}
+.process-step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+.step-circle {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--white);
+  border: 3px solid var(--blue); display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: var(--blue);
+}
+.step-title { font-family: var(--font-heading); font-weight: 700; font-size: 0.92rem; color: var(--navy); margin-bottom: 0.35rem; }
+.step-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+
+/* ============================================================
+   INQUIRY FORM — MAIN
+   ============================================================ */
+.form-section { background: var(--light); }
+.form-wrap {
+  max-width: 720px; margin: 0 auto;
+  background: var(--white); border-radius: 20px;
+  border: 1px solid var(--border); padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+}
+.form-title {
+  font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;
+  color: var(--navy); margin-bottom: 0.3rem;
+}
+.form-subtitle { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-group label { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+.form-group label .required { color: #e53e3e; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1.5px solid var(--border); border-radius: 9px;
+  padding: 11px 14px; font-family: var(--font-body); font-size: 0.9rem;
+  color: var(--text); background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(21,96,189,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-group select { cursor: pointer; }
+
+.form-submit {
+  width: 100%; background: var(--blue); color: var(--white);
+  border: none; border-radius: 10px; padding: 14px;
+  font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.form-submit:hover { background: #0f4d9e; transform: translateY(-1px); }
+.form-submit:disabled { background: var(--muted); cursor: not-allowed; transform: none; }
+
+.form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem; }
+
+/* Success Message */
+.success-msg {
+  display: none; background: #f0faf5; border: 1px solid #86efac;
+  border-radius: 12px; padding: 1.5rem; text-align: center; margin-top: 1rem;
+}
+.success-msg h3 { color: #166534; font-family: var(--font-heading); margin-bottom: 0.4rem; }
+.success-msg p { color: #15803d; font-size: 0.88rem; }
+
+/* ============================================================
+   SERVICE MODAL FORM
+   ============================================================ */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center; padding: 1rem;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: var(--white); border-radius: 18px; padding: 2rem;
+  max-width: 520px; width: 100%; position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: modalIn 0.25s ease;
+  max-height: 90vh; overflow-y: auto;
+}
+@keyframes modalIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: var(--light); border: none; border-radius: 50%;
+  width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); transition: background 0.2s;
+}
+.modal-close:hover { background: var(--border); }
+.modal-service-badge {
+  display: inline-block; background: #EEF4FF; color: var(--blue);
+  font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 99px;
+  margin-bottom: 0.8rem; letter-spacing: 0.06em;
+}
+.modal-title {
+  font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800;
+  color: var(--navy); margin-bottom: 0.3rem;
+}
+.modal-subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.price-card {
+  border: 1.5px solid var(--border); border-radius: 14px;
+  padding: 1.6rem 1.3rem; background: var(--white); position: relative; text-align: center;
+  transition: box-shadow 0.2s;
+}
+.price-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+.price-card.featured { border-color: var(--blue); border-width: 2px; }
+.price-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: var(--white); font-size: 0.7rem; font-weight: 700;
+  padding: 4px 14px; border-radius: 99px; white-space: nowrap; letter-spacing: 0.05em;
+}
+.price-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+.price-type { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-bottom: 0.5rem; }
+.price-amt { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--navy); margin-bottom: 0.2rem; }
+.price-note { font-size: 0.79rem; color: var(--muted); margin-bottom: 1.2rem; }
+.price-items { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 7px; margin-bottom: 1.4rem; }
+.price-items li { font-size: 0.83rem; color: var(--text); display: flex; align-items: flex-start; gap: 8px; }
+.price-items li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+.price-enquire {
+  width: 100%; background: var(--light); color: var(--navy);
+  border: 1.5px solid var(--border); border-radius: 8px; padding: 10px;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.price-enquire:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.price-card.featured .price-enquire { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.price-card.featured .price-enquire:hover { background: #0f4d9e; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 2rem; }
+.contact-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 1.4rem 1.2rem; text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none; color: inherit; display: block;
+}
+.contact-card:hover { box-shadow: 0 8px 28px rgba(21,96,189,0.1); transform: translateY(-2px); }
+.contact-icon-wrap {
+  width: 52px; height: 52px; border-radius: 14px; margin: 0 auto 0.9rem;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.contact-icon-wrap.blue { background: #EEF4FF; }
+.contact-icon-wrap.green { background: #f0faf0; }
+.contact-icon-wrap.orange { background: #fff8ee; }
+.contact-icon-wrap.red { background: #fff0f0; }
+.contact-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+.contact-value { font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; color: var(--navy); }
+.contact-sub { font-size: 0.78rem; color: var(--blue); margin-top: 2px; }
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner {
+  background: linear-gradient(135deg, var(--blue), var(--navy));
+  padding: 4rem 2rem; text-align: center; color: var(--white);
+}
+.cta-banner h2 { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; }
+.cta-banner p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 2rem; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--navy); color: rgba(255,255,255,0.45);
+  text-align: center; padding: 1.5rem; font-size: 0.8rem;
+}
+footer span { color: var(--accent); }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--navy); padding: 1rem 2rem 1.5rem; gap: 1rem; }
+  .nav-links.open + .nav-cta { display: block; margin: 0 2rem 1rem; }
+  .nav-toggle { display: flex; }
+
+  .hero h1 { font-size: 2rem; }
+  .hero-tagline { font-size: 0.95rem; }
+  .college-inner { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid::before { display: none; }
+  .stat { padding: 1rem 1.5rem; }
+  .cta-banner h2 { font-size: 1.5rem; }
+}
+@media (max-width: 420px) {
+  .hero h1 { font-size: 1.7rem; }
+  nav { padding: 0 1.2rem; }
+  .process-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     Apna naam ya logo yahan change karo
+     ============================================================ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">Ayush<span>IT</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#college">Lab Setup</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#enquire" class="nav-cta">Get Free Quote</a>
+  <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    Available for College Lab Contracts · Maharashtra
+  </div>
+
+  <!-- APNA NAAM YAHAN CHANGE KARO -->
+  <h1>Ayush Umesh <span class="highlight">Singh</span></h1>
+  <div class="hero-role">Desktop Support Engineer &amp; IT Infrastructure Specialist</div>
+  <p class="hero-tagline">
+    Complete PC Lab Setup, Hardware Assembly, OS Installation &amp; Full IT Support
+    for Engineering Colleges &amp; Offices — on contract basis.
+  </p>
+
+  <div class="hero-btns">
+    <a href="#enquire" class="btn-primary">📋 Get Free Quote</a>
+    <a href="https://wa.me/919769742926?text=Hi%20Ayush%2C%20I%20need%20IT%20setup%20services.%20Can%20we%20discuss%3F" target="_blank" class="btn-outline">💬 WhatsApp Now</a>
+  </div>
+
+  <div class="trust-row">
+    <div class="trust-item">🏆 <strong>2+ Years</strong> Experience</div>
+    <div class="trust-item">🖥️ <strong>50+ PCs</strong> Assembled</div>
+    <div class="trust-item">🏫 College Labs <strong>Completed</strong></div>
+    <div class="trust-item">📍 <strong>On-site</strong> Service</div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<div class="stats-bar">
+  <!-- In numbers change karo apne actual experience ke hisab se -->
+  <div class="stat"><span class="stat-num">2.3+</span><span class="stat-label">Years Experience</span></div>
+  <div class="stat"><span class="stat-num">50+</span><span class="stat-label">PCs Assembled</span></div>
+  <div class="stat"><span class="stat-num">100%</span><span class="stat-label">On-site Service</span></div>
+  <div class="stat"><span class="stat-num">30</span><span class="stat-label">Days Free Support</span></div>
+</div>
+
+
+<!-- ============================================================
+     SERVICES SECTION
+     New service add karne ke liye ek nayi .service-card copy-paste karo
+     ============================================================ -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label">What I Offer</div>
+    <div class="section-title">Complete IT Setup Services</div>
+    <p class="section-desc">From a single system repair to setting up an entire computer lab — I handle everything professionally, on time, and on budget.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">🖥️</div>
+          <button class="svc-enquire" onclick="openModal('PC Assembly & Build')">Enquire →</button>
+        </div>
+        <div class="svc-title">PC Assembly & Build</div>
+        <p class="svc-desc">Full desktop PC assembly — motherboard, CPU, RAM, storage, PSU, cabling, and cabinet. Tested and ready to use.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">💿</div>
+          <button class="svc-enquire" onclick="openModal('OS Installation')">Enquire →</button>
+        </div>
+        <div class="svc-title">OS Installation</div>
+        <p class="svc-desc">Windows 10/11 and Linux installation with proper activation, drivers, Windows updates, and system optimization.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">📦</div>
+          <button class="svc-enquire" onclick="openModal('Software Installation')">Enquire →</button>
+        </div>
+        <div class="svc-title">Software Installation</div>
+        <p class="svc-desc">All required software for college labs — MS Office, AutoCAD, MATLAB, Tally, C/C++ IDE, antivirus, and more.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">🔧</div>
+          <button class="svc-enquire" onclick="openModal('Hardware Troubleshooting')">Enquire →</button>
+        </div>
+        <div class="svc-title">Hardware Troubleshooting</div>
+        <p class="svc-desc">Diagnose and fix RAM issues, HDD/SSD failures, display problems, power supply faults, and motherboard issues.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">🌐</div>
+          <button class="svc-enquire" onclick="openModal('Networking Support')">Enquire →</button>
+        </div>
+        <div class="svc-title">Networking Support</div>
+        <p class="svc-desc">LAN cable setup, IP configuration, Wi-Fi troubleshooting, router/switch connectivity in labs and offices.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">🏫</div>
+          <button class="svc-enquire" onclick="openModal('College Lab Contract Setup')">Enquire →</button>
+        </div>
+        <div class="svc-title">College Lab Contract</div>
+        <p class="svc-desc">Complete new PC lab setup on contract — assembly, OS, all software, networking, testing, and handover documentation.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">🖨️</div>
+          <button class="svc-enquire" onclick="openModal('Printer & Peripheral Setup')">Enquire →</button>
+        </div>
+        <div class="svc-title">Printer & Peripheral Setup</div>
+        <p class="svc-desc">Printer installation, scanner setup, UPS configuration, and all peripheral device connection in labs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="svc-top">
+          <div class="svc-icon">🛡️</div>
+          <button class="svc-enquire" onclick="openModal('AMC - Annual Maintenance Contract')">Enquire →</button>
+        </div>
+        <div class="svc-title">AMC — Annual Maintenance</div>
+        <p class="svc-desc">Yearly maintenance contract for college labs — regular visits, issue resolution, software updates, and priority support.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     COLLEGE LAB SECTION
+     ============================================================ -->
+<section class="college-section" id="college">
+  <div class="college-inner">
+    <div>
+      <div class="section-label" style="color:var(--accent);">For Engineering Colleges</div>
+      <h2>Complete PC Lab Setup — On Contract</h2>
+      <p>Planning a new computer lab for your engineering college or institute? I take full responsibility — from assembling every PC to installing all required software — so your lab is ready on day one, without any hassle.</p>
+      <p>I provide a detailed written contract with timeline, costing, and deliverables so there's complete transparency.</p>
+      <a href="#enquire" class="btn-primary" style="display:inline-flex;">📋 Request Free Site Visit</a>
+    </div>
+    <ul class="checklist">
+      <li><div class="check-icon">✓</div> Complete PC assembly for all systems in the lab</li>
+      <li><div class="check-icon">✓</div> Windows / Linux OS installation on every machine</li>
+      <li><div class="check-icon">✓</div> All lab software — compilers, MS Office, tools</li>
+      <li><div class="check-icon">✓</div> Driver installation &amp; system optimization</li>
+      <li><div class="check-icon">✓</div> LAN &amp; internet connectivity configuration</li>
+      <li><div class="check-icon">✓</div> Printer, scanner &amp; projector setup</li>
+      <li><div class="check-icon">✓</div> Final testing &amp; documentation handover</li>
+      <li><div class="check-icon">✓</div> 30-day free support after handover</li>
+      <li><div class="check-icon">✓</div> AMC option available for ongoing maintenance</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROCESS SECTION
+     ============================================================ -->
+<section class="section" id="process" style="background: var(--light);">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Simple 4-Step Process</div>
+    <p class="section-desc">From first contact to final handover — everything is planned, transparent, and professional.</p>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-circle">1</div>
+        <div class="step-title">Site Visit & Discussion</div>
+        <p class="step-desc">I visit your college or office, understand requirements, count machines, and note software needs. Free of charge.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">2</div>
+        <div class="step-title">Quotation & Contract</div>
+        <p class="step-desc">You receive a clear written quotation with itemized costs and timeline. Contract signed with all terms.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">3</div>
+        <div class="step-title">Setup & Installation</div>
+        <p class="step-desc">PC assembly, OS installation, all software, networking — done professionally at your location.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">4</div>
+        <div class="step-title">Testing & Handover</div>
+        <p class="step-desc">All systems tested. Documentation and handover done. 30-day free support begins from this day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRICING SECTION
+     ============================================================ -->
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Transparent & Flexible</div>
+    <p class="section-desc">Prices vary by number of systems and scope of work. Below are starting ranges — contact me for a custom quote for your exact requirement.</p>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <span class="price-icon">🔧</span>
+        <div class="price-type">Single System</div>
+        <div class="price-amt">₹500 – ₹1,500</div>
+        <div class="price-note">Per machine (varies by work)</div>
+        <ul class="price-items">
+          <li>OS installation</li>
+          <li>Driver & software setup</li>
+          <li>Basic troubleshooting</li>
+          <li>On-site service</li>
+        </ul>
+        <button class="price-enquire" onclick="openModal('Single System Service')">Get Quote →</button>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-badge">⭐ Most Popular</div>
+        <span class="price-icon">🏫</span>
+        <div class="price-type">Lab Contract (10–50 PCs)</div>
+        <div class="price-amt">Custom Quote</div>
+        <div class="price-note">Based on systems & requirements</div>
+        <ul class="price-items">
+          <li>Full PC assembly</li>
+          <li>OS + all software</li>
+          <li>Networking setup</li>
+          <li>30-day free support</li>
+          <li>Written contract</li>
+        </ul>
+        <button class="price-enquire" onclick="openModal('College Lab Contract Setup')">Get Quote →</button>
+      </div>
+
+      <div class="price-card">
+        <span class="price-icon">📅</span>
+        <div class="price-type">AMC — Annual</div>
+        <div class="price-amt">Negotiable</div>
+        <div class="price-note">Per year, per system basis</div>
+        <ul class="price-items">
+          <li>Regular maintenance visits</li>
+          <li>Troubleshooting included</li>
+          <li>Software updates</li>
+          <li>Priority response</li>
+        </ul>
+        <button class="price-enquire" onclick="openModal('AMC - Annual Maintenance Contract')">Get Quote →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MAIN INQUIRY FORM
+     Yahan Formspree ka form action URL daalna hai (SETUP GUIDE dekho)
+     ============================================================ -->
+<section class="section form-section" id="enquire">
+  <div class="section-inner">
+    <div class="section-label">Contact & Enquiry</div>
+    <div class="section-title">Get a Free Quote</div>
+
+    <div class="form-wrap">
+      <div class="form-title">📋 Send Your Requirement</div>
+      <p class="form-subtitle">Fill this form — I will contact you within 24 hours. Free site visit for college lab projects.</p>
+
+      <!-- 
+        ======================================================
+        IMPORTANT: Yahan action="" mein apna Formspree URL daalo
+        Example: action="https://formspree.io/f/xpzgkabw"
+        Setup guide neeche README.txt mein hai
+        ======================================================
+      -->
+      <form id="mainForm" action="https://formspree.io/f/meedqjaa" method="POST">
+        <!-- Hidden fields — jo aapko track karne mein help karenge -->
+        <input type="hidden" name="_subject" value="🔔 New Enquiry — Ayush IT Services Website">
+        <input type="hidden" name="_next" value="">
+        <input type="hidden" name="Source" value="Website Main Form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" name="Name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp <span class="required">*</span></label>
+            <input type="tel" name="Phone" placeholder="10-digit mobile number" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="Email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Organization / College Name <span class="required">*</span></label>
+            <input type="text" name="Organization" placeholder="College or office name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Service Required <span class="required">*</span></label>
+            <select name="Service" required>
+              <option value="">-- Select a Service --</option>
+              <option>College Lab Contract Setup</option>
+              <option>PC Assembly & Build</option>
+              <option>OS Installation</option>
+              <option>Software Installation</option>
+              <option>Hardware Troubleshooting</option>
+              <option>Networking Support</option>
+              <option>Printer & Peripheral Setup</option>
+              <option>AMC - Annual Maintenance Contract</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Number of Systems (if applicable)</label>
+            <select name="Systems_Count">
+              <option value="">-- Select --</option>
+              <option>1–5 systems</option>
+              <option>6–15 systems</option>
+              <option>16–30 systems</option>
+              <option>31–50 systems</option>
+              <option>50+ systems</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>City / Location <span class="required">*</span></label>
+          <input type="text" name="Location" placeholder="City and area where work is needed" required>
+        </div>
+
+        <div class="form-group">
+          <label>Describe Your Requirement</label>
+          <textarea name="Message" placeholder="Tell me more — what kind of lab, how many systems, what software needed, any specific requirements..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="mainSubmitBtn">
+          📨 Send Enquiry — I'll Reply in 24 Hours
+        </button>
+
+        <p class="form-note">🔒 Your details are safe. No spam, ever. I only contact you regarding your query.</p>
+      </form>
+
+      <div class="success-msg" id="mainSuccessMsg">
+        <h3>✅ Enquiry Sent Successfully!</h3>
+        <p>Thank you! I have received your enquiry and will contact you within 24 hours on your phone/WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section class="section" id="contact" style="background: var(--light);">
+  <div class="section-inner">
+    <div class="section-label">Direct Contact</div>
+    <div class="section-title">Reach Me Directly</div>
+    <p class="section-desc">Prefer to contact directly? Call, WhatsApp, or email — I respond quickly. Free site visit available for lab projects.</p>
+
+    <div class="contact-grid">
+      <!-- APNA NUMBER YAHAN CHANGE KARO -->
+      <a href="tel:9769742926" class="contact-card">
+        <div class="contact-icon-wrap blue">📞</div>
+        <div class="contact-label">Call Me</div>
+        <div class="contact-value">9769742926</div>
+        <div class="contact-sub">Tap to call directly</div>
+      </a>
+
+      <!-- APNA WHATSAPP NUMBER YAHAN CHANGE KARO -->
+      <a href="https://wa.me/919769742926?text=Hi%20Ayush%2C%20I%20need%20IT%20setup%20services%20for%20my%20college%2Foffice.%20Can%20we%20discuss%3F" target="_blank" class="contact-card">
+        <div class="contact-icon-wrap green">💬</div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">9769742926</div>
+        <div class="contact-sub">Tap to chat on WhatsApp</div>
+      </a>
+
+      <!-- APNA EMAIL YAHAN CHANGE KARO -->
+      <a href="mailto:singhayush6565@gmail.com?subject=IT%20Services%20Enquiry&body=Hi%20Ayush%2C%20I%20need%20IT%20setup%20services.%20Please%20contact%20me." class="contact-card">
+        <div class="contact-icon-wrap orange">✉️</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value" style="font-size:0.78rem;">singhayush6565@gmail.com</div>
+        <div class="contact-sub">Tap to send email</div>
+      </a>
+
+      <div class="contact-card" style="cursor:default;">
+        <div class="contact-icon-wrap red">📍</div>
+        <div class="contact-label">Service Area</div>
+        <div class="contact-value">Maharashtra</div>
+        <div class="contact-sub">Mon–Sat, 9am–7pm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<section class="cta-banner">
+  <h2>New Computer Lab? Let's Talk.</h2>
+  <p>I provide free site visits and no-obligation quotations for engineering colleges, polytechnics, and institutes across Maharashtra.</p>
+  <div class="cta-btns">
+    <a href="tel:9769742926" class="btn-primary">📞 Call: 9769742926</a>
+    <a href="https://wa.me/919769742926?text=Hi%20Ayush%2C%20I%20want%20to%20discuss%20a%20computer%20lab%20setup%20project." target="_blank" class="btn-outline">💬 WhatsApp</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <p>© 2025 <span>Ayush Umesh Singh</span> · IT Setup & Support Services · Maharashtra</p>
+  <p style="margin-top:6px;">
+    <a href="tel:9769742926">📞 9769742926</a> &nbsp;|&nbsp;
+    <a href="mailto:singhayush6565@gmail.com">✉️ singhayush6565@gmail.com</a>
+  </p>
+</footer>
+
+
+<!-- ============================================================
+     SERVICE ENQUIRY MODAL
+     (Jab koi "Enquire" button dabata hai toh yeh popup aata hai)
+     ============================================================ -->
+<div class="modal-overlay" id="serviceModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-service-badge" id="modalBadge">Service Enquiry</div>
+    <div class="modal-title">📋 Quick Enquiry</div>
+    <p class="modal-subtitle">Fill this short form — I'll call or WhatsApp you back within a few hours.</p>
+
+    <!-- 
+      IMPORTANT: Yahan bhi apna Formspree URL daalo (same URL)
+    -->
+    <form id="modalForm" action="https://formspree.io/f/meedqjaa" method="POST">
+      <input type="hidden" name="_subject" value="🔔 Service Enquiry — Ayush IT Services">
+      <input type="hidden" name="Source" value="Service Card Quick Enquiry">
+      <input type="hidden" name="Service" id="modalServiceField" value="">
+
+      <div class="form-group">
+        <label>Your Name <span class="required">*</span></label>
+        <input type="text" name="Name" placeholder="Full name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone / WhatsApp <span class="required">*</span></label>
+        <input type="tel" name="Phone" placeholder="Mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label>College / Organization</label>
+        <input type="text" name="Organization" placeholder="College or office name">
+      </div>
+
+      <div class="form-group">
+        <label>Your Requirement</label>
+        <textarea name="Message" placeholder="Tell me briefly what you need..." style="min-height:80px;"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit" id="modalSubmitBtn">
+        📨 Send Enquiry
+      </button>
+    </form>
+
+    <div class="success-msg" id="modalSuccessMsg">
+      <h3>✅ Done! I'll Contact You Soon.</h3>
+      <p>Your enquiry is received. I'll call or WhatsApp you within a few hours.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* --- NAVIGATION MOBILE TOGGLE --- */
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+/* --- MODAL OPEN/CLOSE --- */
+function openModal(serviceName) {
+  document.getElementById('modalBadge').textContent = serviceName;
+  document.getElementById('modalServiceField').value = serviceName;
+  document.getElementById('serviceModal').classList.add('active');
+  document.getElementById('modalSuccessMsg').style.display = 'none';
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('modalSubmitBtn').disabled = false;
+  document.getElementById('modalSubmitBtn').textContent = '📨 Send Enquiry';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('serviceModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+/* Close modal if clicked outside */
+document.getElementById('serviceModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+/* Close modal on Escape key */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* --- MAIN FORM SUBMISSION --- */
+document.getElementById('mainForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('mainSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Sending...';
+
+  try {
+    const response = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      this.style.display = 'none';
+      document.getElementById('mainSuccessMsg').style.display = 'block';
+      // WhatsApp redirect as backup
+      const name = this.querySelector('[name="Name"]').value;
+      const phone = this.querySelector('[name="Phone"]').value;
+      const service = this.querySelector('[name="Service"]').value;
+      // Optional: auto-open WhatsApp with details
+      // window.open(`https://wa.me/919769742926?text=New+enquiry+from+${name}+(${phone})+for:+${service}`, '_blank');
+    } else {
+      btn.disabled = false;
+      btn.textContent = '📨 Send Enquiry — I\'ll Reply in 24 Hours';
+      alert('Something went wrong. Please call or WhatsApp directly: 9769742926');
+    }
+  } catch (error) {
+    btn.disabled = false;
+    btn.textContent = '📨 Send Enquiry — I\'ll Reply in 24 Hours';
+    alert('Network error. Please call directly: 9769742926');
+  }
+});
+
+/* --- MODAL FORM SUBMISSION --- */
+document.getElementById('modalForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('modalSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Sending...';
+
+  try {
+    const response = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      this.style.display = 'none';
+      document.getElementById('modalSuccessMsg').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = '📨 Send Enquiry';
+      alert('Error sending. Please WhatsApp: 9769742926');
+    }
+  } catch (error) {
+    btn.disabled = false;
+    btn.textContent = '📨 Send Enquiry';
+    alert('Network error. Please WhatsApp: 9769742926');
+  }
+});
+
+/* --- SMOOTH NAV HIGHLIGHT (optional) --- */
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+</script>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919769742926?text=Hello%20Ayush%20IT%20Services,%20I%20need%20information%20regarding%20computer%20lab%20setup."
+   class="whatsapp-float"
+   target="_blank">
+
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+       alt="WhatsApp"
+       class="whatsapp-icon">
+
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+</style>
+<section style="padding:50px;background:#0f172a;color:white;text-align:center;">
+
+<h2 style="font-size:35px;">Recent Projects</h2>
+<p>Professional IT Setup & Support Services</p>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:30px;">
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project1.jpg" style="width:100%;border-radius:10px;">
+<h3>Computer Lab Setup</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project2.jpg" style="width:100%;border-radius:10px;">
+<h3>Desktop Support</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project3.jpg" style="width:100%;border-radius:10px;">
+<h3>Windows Installation</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project4.jpg" style="width:100%;border-radius:10px;">
+<h3>Software Deployment</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project5.jpg" style="width:100%;border-radius:10px;">
+<h3>Hardware Upgrade</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project6.jpg" style="width:100%;border-radius:10px;">
+<h3>Networking Setup</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project7.jpg" style="width:100%;border-radius:10px;">
+<h3>PC Maintenance</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project8.jpg" style="width:100%;border-radius:10px;">
+<h3>Technical Support</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project9.jpg" style="width:100%;border-radius:10px;">
+<h3>System Configuration</h3>
+</div>
+
+<div style="background:#1e293b;padding:10px;border-radius:15px;width:300px;">
+<img src="images/project10.jpg" style="width:100%;border-radius:10px;">
+<h3>IT Infrastructure</h3>
+</div>
+
+</div>
+</section>
+</body>
+</html>
