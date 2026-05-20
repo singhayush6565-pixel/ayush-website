@@ -1070,30 +1070,25 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 </script>
 .whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  zoom: reset;
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  left: auto !important;
+  z-index: 9999;
+  width: 55px;
+  height: 55px;
+  display: block;
 }
 .whatsapp-icon {
-  width: 60px;
-  height: 60px;
+  width: 55px !important;
+  height: 55px !important;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
+  display: block;
 }
 .whatsapp-icon:hover {
   transform: scale(1.1);
-}
-.project-card {
-  transition: 0.4s ease;
-}
-.project-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
    
 </style>
