@@ -1069,6 +1069,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 </script>
+
+<style>
 .whatsapp-float {
   position: fixed !important;
   bottom: 25px !important;
@@ -1090,7 +1092,13 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 .whatsapp-icon:hover {
   transform: scale(1.1);
 }
-   
+.project-card {
+  transition: 0.4s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 </style>
 
 <section style="padding:50px;background:#0f172a;color:white;text-align:center;">
@@ -1172,7 +1180,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
   </div>
 </section>
-   <a href="https://wa.me/919769742926?text=Hello%20Ayush%20IT%20Services,%20I%20need%20information%20regarding%20computer%20lab%20setup."
+
+<a href="https://wa.me/919769742926?text=Hello%20Ayush%20IT%20Services,%20I%20need%20information%20regarding%20computer%20lab%20setup."
    class="whatsapp-float"
    target="_blank">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
