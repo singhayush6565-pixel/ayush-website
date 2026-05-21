@@ -2,19 +2,20 @@
   "name": "Ayush IT Services",
   "short_name": "AyushIT",
   "description": "IT Lab Setup & Support Services Maharashtra",
-  "start_url": "/",
+  "start_url": "/ayush-website/",
+  "scope": "/ayush-website/",
   "display": "standalone",
   "background_color": "#0B1D3A",
   "theme_color": "#1560BD",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/ayush-website/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "/ayush-website/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
